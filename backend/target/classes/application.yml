@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: medapp-backend
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:medapp}
+    username: ${DB_USER:medapp}
+    password: ${DB_PASSWORD:medapp}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+    open-in-view: false
+
+server:
+  port: 8080
+
+# CORS - Angular dev server
+cors:
+  allowed-origins: http://localhost:4200
